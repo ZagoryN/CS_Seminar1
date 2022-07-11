@@ -9,11 +9,11 @@ int ost = a % 2; // переменная - остаток от деления н
 
 if (ost == 0)
 {
-    Console.Write("Делится ли оно на 2 без остатка? ");
+    Console.Write("Число четное? ");
     Console.WriteLine("Да");
 }
 else 
 {
-    Console.Write("Делится ли оно на 2 без остатка? ");
+    Console.Write("Число четное? ");
     Console.WriteLine("Нет");
 }
