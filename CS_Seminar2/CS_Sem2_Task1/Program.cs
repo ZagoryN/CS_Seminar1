@@ -6,12 +6,21 @@
 Console.Write("Введите трехзначное число: ");  // приглашение ко вводу
 int A = Convert.ToInt32(Console.ReadLine()); // ввод числа A
 
-if (A > 100 && A < 1000)
+if ((A > 100 && A < 1000) || (A > -1000 && A < -100))
 {
     int ost = A / 10;
-    int secondDigit = ost % 10;
-    Console.Write($"Вторая цифра этого трёхзначного числа - {secondDigit}");
-   }
+    if (ost > 0)
+    {
+        int secondDigit = ost % 10;
+        Console.Write($"Вторая цифра этого трёхзначного числа - {secondDigit}");
+    }
+    else 
+    {
+        int secondDigit = (ost % 10)* (-1);
+        Console.Write($"Вторая цифра этого трёхзначного числа - {secondDigit}");
+    }
+    
+}
 else 
 {
     Console.Write("Это не трёхзначное число. Попробуйте ещё раз.");
