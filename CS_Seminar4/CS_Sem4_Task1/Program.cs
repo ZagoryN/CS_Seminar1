@@ -10,4 +10,4 @@ for (int i=1; i <= B; i++)
 {
     result=result*A;
 }
-Console.Write(result);
+Console.Write($"Результат: {result}.");
