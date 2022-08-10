@@ -17,7 +17,7 @@ int[] FillArrayWithRandomNumbers(int size, int leftRange, int rightRange)  // р
     return arr;
 }
 
-int[] a = FillArrayWithRandomNumbers(6,-100,101); // наполняем массив
+int[] a = FillArrayWithRandomNumbers(123,-100,101); // наполняем массив
 Console.WriteLine("[" + string.Join(", ", a) + "]"); //выводим наполненный массив
 int count = 0;
 
