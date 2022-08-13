@@ -26,17 +26,28 @@ void FillArray(double[,] matr)
     {
         for (int j = 0; j < matr.GetLength(1); j++)
         {
-            matr[i,j]= rand.NextDouble() * 1000; // NextDouble() дает случайное вещественное число в диапазоне от 0 до 1
+            matr[i,j]= rand.NextDouble() * 100; // NextDouble() дает случайное вещественное число в диапазоне от 0 до 1
             //Console.Write("{0,6:F2}", matr[i, j]);;   
         }
     }
 }
 
+Console.Write("Введите число строк m: ");  
+int m = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите число столбцов n: ");  
+int n = Convert.ToInt32(Console.ReadLine());
 
-double[,] matrix = new double[3,4];  //выделяем память, инициализация массива
+if (m <=0 || n <= 0)
+{
+    Console.WriteLine("Неверное количество строк или столбцов, массив не может быть инициирован.");
+}
+else
+{
+    double[,] matrix = new double[m, n];  //выделяем память, инициализация массива
 
-PrintArray(matrix); // вызываем метод
+    PrintArray(matrix); // вызываем метод
 
-FillArray(matrix);
-Console.WriteLine();
-PrintArray(matrix); 
+    FillArray(matrix);
+    Console.WriteLine();
+    PrintArray(matrix);
+}
