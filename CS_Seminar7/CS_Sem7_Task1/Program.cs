@@ -12,7 +12,7 @@ void PrintArray(double[,] matr)
     {
         for (int j = 0; j < matr.GetLength(1); j++)
         {
-            Console.Write($"{matr[i, j]} ");
+            Console.Write("{0,6:F2}", matr[i, j]);;  // выводим 2 знака после запятой
         }
         Console.WriteLine(); //переход на новую строку для красивого отображения
     }
@@ -27,7 +27,6 @@ void FillArray(double[,] matr)
         for (int j = 0; j < matr.GetLength(1); j++)
         {
             matr[i,j]= rand.NextDouble() * 100; // NextDouble() дает случайное вещественное число в диапазоне от 0 до 1
-            //Console.Write("{0,6:F2}", matr[i, j]);;   
         }
     }
 }
@@ -45,9 +44,7 @@ else
 {
     double[,] matrix = new double[m, n];  //выделяем память, инициализация массива
 
-    PrintArray(matrix); // вызываем метод
-
-    FillArray(matrix);
+    FillArray(matrix);   // вызываем методы
     Console.WriteLine();
     PrintArray(matrix);
 }
