@@ -12,23 +12,37 @@ int m = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите число столбцов n: ");  
 int n = Convert.ToInt32(Console.ReadLine());
 
-int[,] matrix = FillMatrixRandomNumbers(m,n);
-
-int[,] FillMatrixRandomNumbers(int rows, int columns, int leftRange = 0, int rightRange = 10)
-// leftRange = 0 и rightRange = 10  - значения по умолчанию
+int [,] matrix = FillMatrix(m,n);
+int[,] FillMatrix(int rows, int columns)
 {
     int[,] matr = new int[rows,columns];
-    Random rand = new Random();
-
     for (int i = 0; i < matr.GetLength(0); i++)
     {
-        for (int j = 0; j < matr.GetLength(1); j++)
-        {
-            matr[i,j] = rand.Next(leftRange, rightRange+1);
-        }
+         for (int j = 0; j < matr.GetLength(1); j++)
+         {
+             Console.WriteLine("Введите элемент матрицы (построчно): ");
+             matr[i,j] = Convert.ToInt32(Console.ReadLine());
+         }
     }
-    return matr;
+     return matr;
 }
+//int[,] matrix = FillMatrixRandomNumbers(m,n);
+
+// int[,] FillMatrixRandomNumbers(int rows, int columns, int leftRange = 0, int rightRange = 10)
+// // leftRange = 0 и rightRange = 10  - значения по умолчанию
+// {
+//     int[,] matr = new int[rows,columns];
+//     Random rand = new Random();
+
+//     for (int i = 0; i < matr.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < matr.GetLength(1); j++)
+//         {
+//             matr[i,j] = rand.Next(leftRange, rightRange+1);
+//         }
+//     }
+//     return matr;
+// }
 
 void PrintMatrix(int[,] matrixx)
 {
@@ -44,10 +58,10 @@ void PrintMatrix(int[,] matrixx)
 
 PrintMatrix(matrix);
 
-float sum = 0;
+double sum = 0;
 //float result = 1;
 
-float[] Array = new float[matrix.GetLength(1)];
+double[] Array = new double[matrix.GetLength(1)];
 
 for (int j = 0; j < n; j++)
     {
@@ -57,25 +71,8 @@ for (int j = 0; j < n; j++)
              
         }
         Array[j] = sum/m;
-
-        //Console.Write(sum) ; Console.WriteLine($" {result}");
-                sum = 0;
+       // Console.Write("{0,5:F2}", Array[j]);
+        sum = 0;
     }
+    Console.WriteLine();
     Console.WriteLine(string.Join("; ", Array));
-// int[] Array = new int[matrix.GetLength(0)];
-//     //int k = 0;
-
-//     int sum = 0;
-//     for (int j = 0; j < matrix.GetLength(1); j++)
-//     {
-//         int i = 0;
-//         sum = sum + matrix[i, j];
-//         for (int k=0; k < Array.Length; k++) 
-//         {
-//             Array[k]=sum;
-//             i++;
-//         }
-//     }
-    
-    
-// Console.WriteLine("Получившийся массив: [" + string.Join("; ", Array) + "]");
