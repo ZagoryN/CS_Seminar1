@@ -56,7 +56,7 @@ else
 
     int SearchPosition(int[,] arr, int positionRows, int positionColumns)
     {
-        if (positionRows > arr.GetLength(0) || positionColumns > arr.GetLength(1))
+        if (positionRows > arr.GetLength(0)-1 || positionColumns > arr.GetLength(1)-1)
         {
             Console.WriteLine("Такого числа в массиве нет");
         }
