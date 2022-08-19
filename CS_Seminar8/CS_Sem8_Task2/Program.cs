@@ -67,8 +67,8 @@ else
         sumArray[i] = sum;
         sum = 0;
     }
-    Console.WriteLine();
-    Console.WriteLine("["+ string.Join("; ", sumArray) + "]");
+    //Console.WriteLine();
+    //Console.WriteLine("["+ string.Join("; ", sumArray) + "]");
 
     int index = 0;
     int minElement = sumArray[index];
