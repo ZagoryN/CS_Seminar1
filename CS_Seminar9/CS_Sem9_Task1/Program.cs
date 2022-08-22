@@ -5,11 +5,11 @@
 Console.WriteLine("Введите число N:");
 int number = Convert.ToInt32(Console.ReadLine());
 
-PrintNumbersToN(number);
+PrintNumbersNto1(number);
 
-void PrintNumbersToN(int N)
+void PrintNumbersNto1(int N)
 {
     if (N < 1) return;
     Console.Write(N + " ");
-    PrintNumbersToN(N - 1);
+    PrintNumbersNto1(N - 1);
 }
