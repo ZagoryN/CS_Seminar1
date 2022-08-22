@@ -67,11 +67,16 @@ else
     Console.WriteLine("Введите число столбцов q второго массива: ");
     int q = Convert.ToInt32(Console.ReadLine());
 
-    if (p != n)
+    if (p <= 0 || q <= 0)
+    {
+        Console.WriteLine("Неверное количество строк или столбцов, массив не может быть инициирован.");
+    }
+
+    else if (p != n)
     {
         Console.WriteLine("Произведение матриц не существует.");
     }
-    else 
+    else
     {
         int[,] matrix2 = FillMatrixRandomNumbers(p, q);
 
@@ -82,9 +87,9 @@ else
     }
 
     int[,] Multiplication(int[,] a, int[,] b)
-{
-    int[,] res = new int[a.GetLength(0), b.GetLength(1)];
-    for (int l = 0; l < a.GetLength(0); l++)
+    {
+        int[,] res = new int[a.GetLength(0), b.GetLength(1)];
+        for (int l = 0; l < a.GetLength(0); l++)
         {
             for (int j = 0; j < b.GetLength(1); j++)
             {
