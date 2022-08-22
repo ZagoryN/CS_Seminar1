@@ -67,32 +67,58 @@ else
     Console.WriteLine("Введите число столбцов q второго массива: ");
     int q = Convert.ToInt32(Console.ReadLine());
 
-    if (m <=0 || n <= 0)
-{
-    Console.WriteLine("Неверное количество строк или столбцов, массив не может быть инициирован.");
-}
-else
-{
-        int[,] matrix2 = FillMatrixRandomNumbers(m, n);
+    if (p != n)
+    {
+        Console.WriteLine("Произведение матриц не существует.");
+    }
+    else 
+    {
+        int[,] matrix2 = FillMatrixRandomNumbers(p, q);
 
         PrintMatrix(matrix2);
-
-        if (m == p && n == q)
-        {
-            int[,] composedMatrix = new int[m, n];
-            for (int i = 0; i < matrix1.GetLength(0); i++)
-            {
-                for (int j = 0; j < matrix2.GetLength(1); j++)
-                {
-                    composedMatrix[i, j] = matrix1[i, j] * matrix2[i, j];
-                }
-            }
-            Console.WriteLine();
-            PrintMatrix(composedMatrix);
-        }
-        else
-        {
-            Console.WriteLine("Произведение матриц невозможно вычислить");
-        }
+        int[,] Composed = Multiplication(matrix1, matrix2);
+        Console.WriteLine();
+        PrintMatrix(Composed);
     }
+
+    int[,] Multiplication(int[,] a, int[,] b)
+{
+    int[,] res = new int[a.GetLength(0), b.GetLength(1)];
+    for (int l = 0; l < a.GetLength(0); l++)
+        {
+            for (int j = 0; j < b.GetLength(1); j++)
+            {
+                for (int k = 0; k < b.GetLength(0); k++)
+                {
+                    res[l, j] += a[l, k] * b[k, j];
+                }
+                
+            }
+            
+        } 
+        return res;
+    }
+
 }
+
+
+// реализация умножения 2х матриц, как результат перемножения i, j элемента одной матрицы с i,j элементом другой матрицы
+// if (m == p && n == q)
+// {
+//     int[,] composedMatrix = new int[m, n];
+//     for (int i = 0; i < matrix1.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < matrix2.GetLength(1); j++)
+//         {
+//             composedMatrix[i, j] = matrix1[i, j] * matrix2[i, j];
+//         }
+//     }
+//     Console.WriteLine();
+//     PrintMatrix(composedMatrix);
+// }
+// else
+// {
+//     Console.WriteLine("Произведение матриц невозможно вычислить");
+// }
+
+
